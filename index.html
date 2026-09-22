@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f4ef" />
+  <title>Web Designer 150K</title>
+  <meta name="description" content="90-дневная система выхода веб-дизайнера на 150 000 ₽ в месяц." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Навигация">
+      <div class="brand">
+        <span class="brand-mark">150</span>
+        <div><strong>WEB DESIGNER</strong><span>90 DAY CHALLENGE</span></div>
+      </div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span>Главная</button>
+        <button class="nav-item" data-view="plan"><span>✓</span>План</button>
+        <button class="nav-item" data-view="leads"><span>◎</span>Клиенты</button>
+        <button class="nav-item" data-view="portfolio"><span>▱</span>Портфолио</button>
+        <button class="nav-item" data-view="learning"><span>◌</span>Обучение</button>
+        <button class="nav-item" data-view="analytics"><span>↗</span>Аналитика</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-target"><span>Цель месяца</span><strong id="sideRevenue">0 ₽ / 150 000 ₽</strong><div class="progress"><i id="sideProgress"></i></div></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark">150</span><strong>WEB DESIGNER</strong></div>
+        <div class="top-actions"><button class="icon-btn" id="resetBtn" title="Сбросить демо-данные">↺</button><div class="avatar">Э</div></div>
+      </header>
+
+      <section id="dashboard" class="view active">
+        <div class="page-heading">
+          <div><p class="eyebrow">ДЕНЬ <span id="dayNumber">1</span> / 90</p><h1>Твой путь к <em>150 000 ₽</em></h1><p class="muted">Не «быть занятой», а каждый день делать действия, которые приводят к деньгам.</p></div>
+          <button class="primary-btn" id="addRevenueBtn">+ Добавить оплату</button>
+        </div>
+
+        <div class="hero-grid">
+          <article class="revenue-card">
+            <div class="card-top"><span>Доход за месяц</span><span class="status-dot">● В процессе</span></div>
+            <div class="big-number" id="revenue">0 ₽</div>
+            <div class="target-line"><span>Цель 150 000 ₽</span><span id="revenuePercent">0%</span></div>
+            <div class="progress large"><i id="mainProgress"></i></div>
+            <div class="revenue-meta"><div><b id="dealCount">0</b><span>сделок</span></div><div><b id="avgCheck">0 ₽</b><span>средний чек</span></div><div><b id="daysLeft">90</b><span>дней осталось</span></div></div>
+          </article>
+          <article class="math-card"><span class="eyebrow">МАТЕМАТИКА ЦЕЛИ</span><h2>3 сайта × 50 000 ₽</h2><p>или 5 сайтов × 30 000 ₽. Система считает не мечту, а конкретный объём работы.</p><div class="formula"><span>150 000 ₽</span><b>÷</b><span>50 000 ₽</span><b>=</b><strong>3</strong></div><button class="text-btn" data-view-target="analytics">Смотреть воронку →</button></article>
+        </div>
+
+        <div class="section-title"><div><span class="eyebrow">СЕГОДНЯ</span><h2>Revenue actions</h2></div><span class="counter" id="actionCounter">0 / 5</span></div>
+        <div class="actions-grid" id="todayActions"></div>
+
+        <div class="dashboard-bottom">
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">ВОРОНКА</span><h2>Продажи</h2></div><button class="text-btn" data-view-target="leads">Открыть CRM →</button></div>
+            <div class="funnel" id="funnel"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">90 ДНЕЙ</span><h2>Текущий этап</h2></div></div>
+            <div class="phase"><div class="phase-number">01</div><div><strong>FOUNDATION</strong><p>Навык → позиционирование → портфолио → первые лиды.</p></div><span>1—30</span></div>
+            <div class="phase muted-phase"><div class="phase-number">02</div><div><strong>CLIENTS</strong><p>Системный поиск клиентов и первые сделки.</p></div><span>31—60</span></div>
+            <div class="phase muted-phase"><div class="phase-number">03</div><div><strong>150K</strong><p>Увеличение чека, поток и закрытие цели.</p></div><span>61—90</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="plan" class="view">
+        <div class="page-heading"><div><p class="eyebrow">ПЛАН НА 90 ДНЕЙ</p><h1>Сегодня → следующий клиент</h1><p class="muted">Каждая задача привязана к одному из четырёх двигателей дохода.</p></div></div>
+        <div class="plan-tabs"><button class="tab active">Сегодня</button><button class="tab">Неделя</button><button class="tab">90 дней</button></div>
+        <div class="plan-list" id="planList"></div>
+      </section>
+
+      <section id="leads" class="view">
+        <div class="page-heading"><div><p class="eyebrow">CRM</p><h1>Потенциальные клиенты</h1><p class="muted">Не теряем ни один контакт и всегда знаем следующий шаг.</p></div><button class="primary-btn" id="addLeadBtn">+ Новый лид</button></div>
+        <div class="pipeline" id="pipeline"></div>
+      </section>
+
+      <section id="portfolio" class="view">
+        <div class="page-heading"><div><p class="eyebrow">ПОРТФОЛИО</p><h1>5 проектов, которые продают тебя</h1><p class="muted">Не количество работ, а понятные кейсы с бизнес-задачей и результатом.</p></div></div>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+      </section>
+
+      <section id="learning" class="view">
+        <div class="page-heading"><div><p class="eyebrow">ОБУЧЕНИЕ</p><h1>Стать сильнее как веб-дизайнер</h1><p class="muted">Закрываем пробелы ровно в том порядке, в котором они нужны для продаж.</p></div></div>
+        <div class="learning-grid" id="learningGrid"></div>
+      </section>
+
+      <section id="analytics" class="view">
+        <div class="page-heading"><div><p class="eyebrow">АНАЛИТИКА</p><h1>Движение к 150K</h1><p class="muted">Смотри на цифры честно: лиды, конверсии, чек и деньги.</p></div></div>
+        <div class="stats-grid" id="statsGrid"></div>
+        <div class="panel chart-panel"><div class="panel-head"><div><span class="eyebrow">ВЫРУЧКА</span><h2>Последние 30 дней</h2></div></div><div class="chart" id="chart"></div></div>
+      </section>
+    </main>
+  </div>
+  <nav class="mobile-nav" aria-label="Мобильная навигация">
+    <button class="active" data-view="dashboard"><span>⌂</span><small>Главная</small></button>
+    <button data-view="plan"><span>✓</span><small>План</small></button>
+    <button data-view="leads"><span>◎</span><small>Клиенты</small></button>
+    <button data-view="portfolio"><span>▱</span><small>Портфолио</small></button>
+    <button data-view="analytics"><span>↗</span><small>Аналитика</small></button>
+  </nav>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
