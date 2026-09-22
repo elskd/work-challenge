@@ -25,6 +25,7 @@
         <button class="nav-item" data-view="portfolio"><span>▱</span>Портфолио</button>
         <button class="nav-item" data-view="learning"><span>◌</span>Обучение</button>
         <button class="nav-item" data-view="analytics"><span>↗</span>Аналитика</button>
+        <button class="nav-item" data-view="scripts"><span>⌁</span>Скрипты</button>
       </nav>
       <div class="sidebar-bottom">
         <div class="mini-target"><span>Цель месяца</span><strong id="sideRevenue">0 ₽ / 150 000 ₽</strong><div class="progress"><i id="sideProgress"></i></div></div>
@@ -57,6 +58,7 @@
         <div class="section-title"><div><span class="eyebrow">СЕГОДНЯ</span><h2>Revenue actions</h2></div><span class="counter" id="actionCounter">0 / 5</span></div>
         <div class="actions-grid" id="todayActions"></div>
 
+        <div class="daily-target panel" id="dailyTarget"></div>
         <div class="dashboard-bottom">
           <article class="panel">
             <div class="panel-head"><div><span class="eyebrow">ВОРОНКА</span><h2>Продажи</h2></div><button class="text-btn" data-view-target="leads">Открыть CRM →</button></div>
@@ -92,9 +94,11 @@
         <div class="learning-grid" id="learningGrid"></div>
       </section>
 
+      <section id="scripts" class="view"><div class="page-heading"><div><p class="eyebrow">ПРОДАЖИ</p><h1>Скрипты, которые можно использовать сегодня</h1><p class="muted">Не копируй механически. Подставляй конкретную проблему клиента и результат, который ты предлагаешь.</p></div></div><div class="scripts-grid" id="scriptsGrid"></div></section>
+
       <section id="analytics" class="view">
         <div class="page-heading"><div><p class="eyebrow">АНАЛИТИКА</p><h1>Движение к 150K</h1><p class="muted">Смотри на цифры честно: лиды, конверсии, чек и деньги.</p></div></div>
-        <div class="stats-grid" id="statsGrid"></div>
+        <div class="stats-grid" id="statsGrid"></div><div class="panel funnel-math" id="funnelMath"></div>
         <div class="panel chart-panel"><div class="panel-head"><div><span class="eyebrow">ВЫРУЧКА</span><h2>Последние 30 дней</h2></div></div><div class="chart" id="chart"></div></div>
       </section>
     </main>
@@ -104,7 +108,7 @@
     <button data-view="plan"><span>✓</span><small>План</small></button>
     <button data-view="leads"><span>◎</span><small>Клиенты</small></button>
     <button data-view="portfolio"><span>▱</span><small>Портфолио</small></button>
-    <button data-view="analytics"><span>↗</span><small>Аналитика</small></button>
+    <button data-view="analytics"><span>↗</span><small>Аналитика</small></button><button data-view="scripts"><span>⌁</span><small>Скрипты</small></button>
   </nav>
   <div class="toast" id="toast"></div>
   <script src="app.js"></script>
